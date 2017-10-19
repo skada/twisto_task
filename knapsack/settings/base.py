@@ -121,3 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = join(BASE_DIR, 'static')
+CELERY_BROKER_URL = 'redis://localhost/0'
+CELERY_RESULT_BACKEND = 'redis://localhost/0'
