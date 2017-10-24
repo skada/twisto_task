@@ -29,12 +29,12 @@ class ResultItemInline(BaseItemInline):
 
 @admin.register(KSTask)
 class KSTaskAdmin(admin.ModelAdmin):
-    list_display = ('task_id', 'start_time', 'end_time', )
-    readonly_fields = ('task_id', 'start_time', 'end_time', 'capacity', 'value', )
+    list_display = ('task_id', 'resolver_method', 'start_time', 'end_time', )
+    readonly_fields = ('task_id', 'start_time', 'end_time', 'capacity', 'value', 'resolver_method')
     inlines = (ResultItemInline, InputItemInline, )
     fieldsets = (
         (_('Task base info'), {
-            'fields': ('task_id', ('capacity', 'value'), ('start_time', 'end_time'), )
+            'fields': ('task_id', ('capacity', 'value'), ('start_time', 'end_time'), 'resolver_method')
         }),
     )
 
